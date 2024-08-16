@@ -59,32 +59,32 @@ export default function Index() {
 					{[
 						{
 							nome: "Edrine Vasconcelos",
-							area: "Nutrição materno infantil",
+							area: "Nutricionista materno infantil",
 							imagem: "",
 						},
 						{
 							nome: "Brenda Vasconcelos",
-							area: "Pediatria",
+							area: "Pediatra",
 							imagem: "",
 						},
 						{
 							nome: "Sheily Barreto",
-							area: "Psicologia infantil",
+							area: "Psicológa infantil",
 							imagem: "",
 						},
 						{
 							nome: "Keylla Albuquerque",
-							area: "consultora em Amamentação",
+							area: "Consultora em Amamentação",
 							imagem: "",
 						},
 						{
 							nome: "Kelly Alves",
-							area: "Fonoaudiologia",
+							area: "Fonoaudióloga",
 							imagem: "",
 						},
 						{
 							nome: "Samara Araújo",
-							area: "Fisioterapia",
+							area: "Fisioterapeuta",
 							imagem: "",
 						},
 					].map((p, i) => (
