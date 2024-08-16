@@ -60,7 +60,7 @@ export default function Index() {
 					<a
 						target="_blank"
 						rel="noreferrer"
-						href="https://wa.me/5588992630993?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Nutri%20Edrine."
+						href="https://wa.me/5588992630993?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Nutri%20Edrine%20Vasconcelos."
 						className={`link ${colors.link}`}
 					>
 						Edrine Vasconcelos - Nutri
@@ -68,7 +68,7 @@ export default function Index() {
 					<a
 						target="_blank"
 						rel="noreferrer"
-						href="https://wa.me/5588992630993?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Dra.%20Brenda."
+						href="https://wa.me/5588992630993?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Dra.%20Brenda%20vasconcelos."
 						className={`link ${colors.link}`}
 					>
 						Dra. Brenda Vasconcelos - Ped
@@ -76,7 +76,7 @@ export default function Index() {
 					<a
 						target="_blank"
 						rel="noreferrer"
-						href="https://wa.me/5588992630993?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Psi%20Sheily."
+						href="https://wa.me/5588992630993?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Psi%20Sheily%20Barreto."
 						className={`link ${colors.link}`}
 					>
 						Sheily Barreto - Psi
