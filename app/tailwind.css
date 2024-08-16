@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.poppins-light {
+	font-family: "Poppins", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.poppins-bold {
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+body {
+	font-family: "Poppins", "sans-serif";
+	font-weight: 300;
+}
+
+.link {
+	@apply px-7 py-4 block rounded-2xl outline-none text-white font-semibold;
+}
