@@ -93,7 +93,7 @@ export default function Index() {
 							target="_blank"
 							rel="noreferrer"
 							href={`https://wa.me/5588992630993?text=${encodeURI(
-								`Gostaria de agendar uma CONSULTA com a ${p.nome}`
+								`Gostaria de agendar uma CONSULTA com a ${p.nome} (${p.area})`
 							)}`}
 							className={`link text-xl ${colors.link} flex flex-col`}
 						>
