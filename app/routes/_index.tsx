@@ -56,8 +56,55 @@ export default function Index() {
 							Café Materno Psi
 						</h2>
 					</div> */}
+					{[
+						{
+							nome: "Edrine Vasconcelos",
+							area: "Nutrição materno infantil",
+							imagem: "",
+						},
+						{
+							nome: "Brenda Vasconcelos",
+							area: "Pediatria",
+							imagem: "",
+						},
+						{
+							nome: "Sheily Barreto",
+							area: "Psicologia infantil",
+							imagem: "",
+						},
+						{
+							nome: "Keylla Albuquerque",
+							area: "consultora em Amamentação",
+							imagem: "",
+						},
+						{
+							nome: "Kelly Alves",
+							area: "Fonoaudiologia",
+							imagem: "",
+						},
+						{
+							nome: "Samara Araújo",
+							area: "Fisioterapia",
+							imagem: "",
+						},
+					].map((p, i) => (
+						<a
+							key={i}
+							target="_blank"
+							rel="noreferrer"
+							href={`https://wa.me/5588992630993?text=${encodeURI(
+								`Gostaria de agendar uma CONSULTA com a ${p.nome}`
+							)}`}
+							className={`link text-xl ${colors.link} flex flex-col`}
+						>
+							<div>{p.nome}</div>
+							<div className="text-xs uppercase tracking-widest text-black/25">
+								{p.area}
+							</div>
+						</a>
+					))}
 
-					<a
+					{/* <a
 						target="_blank"
 						rel="noreferrer"
 						href="https://wa.me/5588992630993?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Nutri%20Edrine%20Vasconcelos."
@@ -80,7 +127,7 @@ export default function Index() {
 						className={`link ${colors.link}`}
 					>
 						Sheily Barreto - Psi
-					</a>
+					</a> */}
 				</div>
 
 				{/* <div className="text-xs tracking-tight">
