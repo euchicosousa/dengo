@@ -11,11 +11,11 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-	// console.log(
-	// 	encodeURI(
-	// 		"https://wa.me/5588992630993?text=Olá, Gostaria de agendar uma CONSULTA com a Dra. Edrine."
-	// 	)
-	// );
+	console.log(
+		encodeURI(
+			"https://wa.me/5588992630993?text=Olá, Gostaria de agendar uma CONSULTA com a Dra. Edrine."
+		)
+	);
 
 	const colors = [
 		{ bg: "bg-carinho", link: "bg-abraco" },
@@ -53,7 +53,7 @@ export default function Index() {
 					<a
 						target="_blank"
 						rel="noreferrer"
-						href="https://wa.me/5588992270922?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Brenda."
+						href="https://wa.me/5588992630993?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Nutri%20Edrine."
 						className={`link ${colors.link}`}
 					>
 						Edrine Vasconcelos - Nutri
@@ -61,7 +61,7 @@ export default function Index() {
 					<a
 						target="_blank"
 						rel="noreferrer"
-						href="https://wa.me/5588992270922?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Brenda."
+						href="https://wa.me/5588992630993?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Dra.%20Brenda."
 						className={`link ${colors.link}`}
 					>
 						Dra. Brenda Vasconcelos - Ped
@@ -69,7 +69,7 @@ export default function Index() {
 					<a
 						target="_blank"
 						rel="noreferrer"
-						href="https://wa.me/5588992270922?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Brenda."
+						href="https://wa.me/5588992630993?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Psi%20Sheily."
 						className={`link ${colors.link}`}
 					>
 						Sheily Barreto - Psi
