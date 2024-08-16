@@ -72,7 +72,7 @@ export default function Index() {
 						href="https://wa.me/5588992270922?text=Ol%C3%A1,%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Brenda."
 						className={`link ${colors.link}`}
 					>
-						Sheily Alves - Psi
+						Sheily Barreto - Psi
 					</a>
 				</div>
 
