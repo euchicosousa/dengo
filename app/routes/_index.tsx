@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -10,13 +11,7 @@ export const meta: MetaFunction = () => {
 	];
 };
 
-export default function Index() {
-	console.log(
-		encodeURI(
-			"https://wa.me/5588992630993?text=Olá, Gostaria de agendar uma CONSULTA com a Dra. Edrine."
-		)
-	);
-
+export const loader = () => {
 	const colors = [
 		{ bg: "bg-carinho", link: "bg-abraco" },
 		{ bg: "bg-carinho", link: "bg-serenidade" },
@@ -31,6 +26,18 @@ export default function Index() {
 		{ bg: "bg-serenidade", link: "bg-alegria" },
 		{ bg: "bg-serenidade", link: "bg-abraco" },
 	][Math.floor(Math.random() * 12)];
+
+	return { colors };
+};
+
+export default function Index() {
+	const { colors } = useLoaderData<typeof loader>();
+
+	console.log(
+		encodeURI(
+			"https://wa.me/5588992630993?text=Olá, Gostaria de agendar uma CONSULTA com a Dra. Edrine."
+		)
+	);
 
 	return (
 		<div className={`min-h-dvh grid place-content-center ${colors.bg} `}>
