@@ -40,7 +40,9 @@ export default function Index() {
 	);
 
 	return (
-		<div className={`min-h-dvh grid place-content-center ${colors.bg} `}>
+		<div
+			className={`min-h-dvh min-w-80 grid place-content-center ${colors.bg} `}
+		>
 			<div className="max-w-96 p-8 rounded-xl text-center">
 				<div className="rounded-full mx-auto">
 					<img
@@ -51,11 +53,48 @@ export default function Index() {
 				</div>
 
 				<div className="flex my-12 flex-col gap-2">
-					{/* <div>
-						<h2 className="text-black/50 font-semibold text-2xl">
-							Café Materno Psi
+					<div>
+						<img
+							src="/cafe.jpg"
+							alt="Café Materno Psi"
+							className="overflow-hidden rounded-3xl"
+						/>
+						<h2 className="text-white font-semibold leading-tight text-xl tracking-tighter my-4">
+							Uma roda de conversa sobre as últimas novidades
+							sobre a infância feliz.
 						</h2>
-					</div> */}
+						<div className="flex gap-2 text-center font-semibold text-2xl text-white">
+							<div
+								className={`px-2 py-4 rounded-xl bg-white text-serenidade w-full`}
+							>
+								27/8
+							</div>
+							<div
+								className={`px-2 py-4 rounded-xl bg-white text-serenidade w-full`}
+							>
+								16h
+							</div>
+							<div
+								className={`px-2 py-4 rounded-xl bg-white text-serenidade w-full`}
+							>
+								Dengo
+							</div>
+						</div>
+						<div className="text-sm text-black/50 font-semibold my-4">
+							Evento exclusivo para adultos.
+							<br />
+							Inscrição apenas R$ 49.
+						</div>
+
+						<a
+							className="bg-white mb-8 px-4 py-6 rounded-xl font-semibold text-serenidade text-2xl block tracking-tight"
+							href={`https://wa.me/5588992630993?text=${encodeURI(
+								`Oi, Miriam. Eu quero me inscrever no Café Materno Psi.`
+							)}`}
+						>
+							Quero me inscrever
+						</a>
+					</div>
 					{[
 						{
 							nome: "Edrine Vasconcelos",
