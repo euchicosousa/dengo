@@ -33,12 +33,6 @@ export const loader = () => {
 export default function Index() {
 	const { colors } = useLoaderData<typeof loader>();
 
-	console.log(
-		encodeURI(
-			"https://wa.me/5588992630993?text=Olá, Gostaria de agendar uma CONSULTA com a Dra. Edrine."
-		)
-	);
-
 	return (
 		<div
 			className={`min-h-dvh min-w-80 grid place-content-center ${colors.bg} `}
@@ -72,7 +66,7 @@ export default function Index() {
 							<div
 								className={`px-2 py-4 rounded-xl bg-white text-serenidade w-full`}
 							>
-								16h
+								17h
 							</div>
 							<div
 								className={`px-2 py-4 rounded-xl bg-white text-serenidade w-full`}
