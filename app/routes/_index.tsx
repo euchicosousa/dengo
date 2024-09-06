@@ -47,7 +47,7 @@ export default function Index() {
 				</div>
 
 				<div className="flex my-12 flex-col gap-2">
-					<div>
+					{/* <div>
 						<img
 							src="/cafe.jpg"
 							alt="Café Materno Psi"
@@ -88,7 +88,7 @@ export default function Index() {
 						>
 							Quero me inscrever
 						</a>
-					</div>
+					</div> */}
 					{[
 						{
 							nome: "Edrine Vasconcelos",
