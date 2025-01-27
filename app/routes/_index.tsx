@@ -101,6 +101,11 @@ export default function Index() {
 							imagem: "",
 						},
 						{
+							nome: "Luma Parente",
+							area: "Consultora do Sono",
+							imagem: "",
+						},
+						{
 							nome: "Sheily Barreto",
 							area: "Psicológa infantil",
 							imagem: "",
