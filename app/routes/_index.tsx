@@ -101,7 +101,7 @@ export default function Index() {
 							imagem: "",
 						},
 						{
-							nome: "Luma Parente",
+							nome: "Luma Torre",
 							area: "Consultora do Sono",
 							imagem: "",
 						},
