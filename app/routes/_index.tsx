@@ -101,6 +101,11 @@ export default function Index() {
 							imagem: "",
 						},
 						{
+							nome: "Carol Rios",
+							area: "Gastroenterologista pediátrica",
+							imagem: "",
+						},
+						{
 							nome: "Luma Torre",
 							area: "Consultora do Sono",
 							imagem: "",
