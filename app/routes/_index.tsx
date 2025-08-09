@@ -145,7 +145,7 @@ export default function Index() {
             <img
               src="./map.svg"
               alt="Localização no Google"
-              className="size-20 mb-4 mx-auto"
+              className="size-12 mb-4 mx-auto"
             />
             <div className="text-xs">
               Veja como é fácil chegar aqui na Dengo
@@ -160,7 +160,7 @@ export default function Index() {
             <img
               src="./instagram.svg"
               alt="Siga o nosso Instagram"
-              className="size-20 mb-4 mx-auto"
+              className="size-12 mb-4 mx-auto"
             />
             <div className="text-xs">
               Siga o nosso Instagram e veja tudo que acontece aqui
@@ -175,7 +175,7 @@ export default function Index() {
             <img
               src="./whatsapp.svg"
               alt="Agende sua consulta pelo whatsapp"
-              className="size-20 mb-4 mx-auto"
+              className="size-12 mb-4 mx-auto"
             />
             <div className="text-xs">Agende sua consulta pelo whatsapp</div>
           </a>
