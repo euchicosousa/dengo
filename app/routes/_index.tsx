@@ -15,24 +15,24 @@ export const meta: MetaFunction = () => {
 export const loader = () => {
   const colors = [
     {
-      text: "text-carinho-dark",
+      dark: "text-carinho-dark",
       base: "text-carinho",
-      background: "bg-carinho-light",
+      light: "bg-carinho-light",
     },
     {
-      text: "text-abraco-dark",
+      dark: "text-abraco-dark",
       base: "text-abraco",
-      background: "bg-abraco-light",
+      light: "bg-abraco-light",
     },
     {
-      text: "text-alegria-dark",
+      dark: "text-alegria-dark",
       base: "text-alegria",
-      background: "bg-alegria-light",
+      light: "bg-alegria-light",
     },
     {
-      text: "text-serenidade-dark",
+      dark: "text-serenidade-dark",
       base: "text-serenidade",
-      background: "bg-serenidade-light",
+      light: "bg-serenidade-light",
     },
   ][Math.floor(Math.random() * 4)];
 
@@ -44,10 +44,10 @@ export default function Index() {
 
   return (
     <div
-      className={`min-h-dvh grid place-content-center ${colors.background} ${colors.text}`}
+      className={`min-h-dvh grid place-content-center ${colors.light} ${colors.dark}`}
     >
       <div className="w-full max-w-[720px] p-8 text-center">
-        <div className={`relative max-w-40 mx-auto mb-8 ${colors.base}`}>
+        <div className={`relative max-w-40 mx-auto mb-8 ${colors.dark}`}>
           {/* <img
             src="./dengo.png"
             alt="Clínica Dengo"

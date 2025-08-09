@@ -3,19 +3,19 @@
 :root {
   --carinho-light: #e7dae7;
   --carinho-base: #b4a3b5;
-  --carinho-dark: #6a616b;
+  --carinho-dark: #644a67;
 
   --abraco-light: #f3e5e8;
   --abraco-base: #eacbd1;
-  --abraco-dark: #996670;
+  --abraco-dark: #814853;
 
   --alegria-light: #ebf3e5;
   --alegria-base: #c0ccb8;
-  --alegria-dark: #7e8679;
+  --alegria-dark: #647a57;
 
   --serenidade-light: #dfe6f0;
   --serenidade-base: #beccde;
-  --serenidade-dark: #6c7e93;
+  --serenidade-dark: #466282;
 }
 
 @theme {
