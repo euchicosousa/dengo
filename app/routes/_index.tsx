@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { InstagramIcon, MapIcon, PhoneIcon } from "lucide-react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -43,16 +44,16 @@ export default function Index() {
 
   return (
     <div
-      className={`min-h-dvh min-w-80 grid place-content-center ${colors.background} ${colors.text}`}
+      className={`min-h-dvh grid place-content-center ${colors.background} ${colors.text}`}
     >
-      <div className="max-w-96 p-8 text-center">
+      <div className="w-full max-w-[720px] p-8 text-center">
         <div className={`relative max-w-40 mx-auto mb-8 ${colors.base}`}>
           {/* <img
             src="./dengo.png"
             alt="Clínica Dengo"
             className="mx-auto max-w-40"
           /> */}
-          <Logo className="mx-auto max-w-40" />
+          <Logo className="" />
           <Logo className="absolute top-0 left-0 animate-spin-slow" logo={1} />
         </div>
 
@@ -134,10 +135,40 @@ export default function Index() {
           ))}
         </div>
 
-        <div className="grid grid-cols-3">
-          <div>Localização</div>
-          <div>Instagram</div>
-          <div>Whatsapp</div>
+        <div className="grid grid-cols-3 mt-8 gap-4">
+          <a
+            href="https://maps.app.goo.gl/uq3VQGQhhzJK9qXx5"
+            target="_blank"
+            rel="noreferrer"
+            className="text-center bg-white p-4 rounded-lg"
+          >
+            <MapIcon className="size-8 mb-2 mx-auto opacity-50" />
+            <div className="text-xs">
+              Veja como é fácil chegar <br /> aqui na Dengo
+            </div>
+          </a>
+          <a
+            href="https://www.instagram.com/clinicadengo/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-center bg-white p-4 rounded-lg"
+          >
+            <InstagramIcon className="size-8 mb-2 mx-auto opacity-50" />
+            <div className="text-xs">
+              Siga o nosso Instagrame veja <br /> tudo que acontece aqui
+            </div>
+          </a>
+          <a
+            href="https://wa.me/5588992630993"
+            target="_blank"
+            rel="noreferrer"
+            className="text-center bg-white p-4 rounded-lg"
+          >
+            <PhoneIcon className="size-8 mb-2 mx-auto opacity-50" />
+            <div className="text-xs">
+              Agende sua consulta <br /> pelo whatsapp
+            </div>
+          </a>
         </div>
       </div>
     </div>
