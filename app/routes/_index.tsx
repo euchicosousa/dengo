@@ -56,6 +56,10 @@ export default function Index() {
           <Logo className="absolute top-0 left-0 animate-spin-slow" logo={1} />
         </div>
 
+        <div className="text-2xl font-light tracking-tight mb-8">
+          Com quem você deseja agendar sua consulta?
+        </div>
+
         <div className="grid grid-cols-2 gap-2 leading-none">
           {[
             {
@@ -64,7 +68,7 @@ export default function Index() {
               imagem: "edrine.png",
             },
             {
-              nome: "Brenda Vasconcelos",
+              nome: "Dra. Brenda Vasconcelos",
               area: "Pediatra",
               imagem: "brenda.png",
             },
@@ -74,12 +78,12 @@ export default function Index() {
               imagem: "sheilly.png",
             },
             {
-              nome: "Carol Rios",
+              nome: "Dra. Carol Rios",
               area: "Gastroenterologista pediátrica",
               imagem: "carol.png",
             },
             {
-              nome: "Dr. Alanne Holanda",
+              nome: "Dra. Alanne Holanda",
               area: "Urologista pediátrica",
               imagem: "alanne.png",
             },
@@ -128,6 +132,12 @@ export default function Index() {
               </div>
             </a>
           ))}
+        </div>
+
+        <div className="grid grid-cols-3">
+          <div>Localização</div>
+          <div>Instagram</div>
+          <div>Whatsapp</div>
         </div>
       </div>
     </div>
