@@ -140,34 +140,44 @@ export default function Index() {
             href="https://maps.app.goo.gl/uq3VQGQhhzJK9qXx5"
             target="_blank"
             rel="noreferrer"
-            className="text-center bg-white p-4 rounded-lg"
+            className="text-center"
           >
-            <MapIcon className="size-8 mb-2 mx-auto opacity-50" />
+            <img
+              src="./map.svg"
+              alt="Localização no Google"
+              className="size-20 mb-4 mx-auto"
+            />
             <div className="text-xs">
-              Veja como é fácil chegar <br /> aqui na Dengo
+              Veja como é fácil chegar aqui na Dengo
             </div>
           </a>
           <a
             href="https://www.instagram.com/clinicadengo/"
             target="_blank"
             rel="noreferrer"
-            className="text-center bg-white p-4 rounded-lg"
+            className="text-center"
           >
-            <InstagramIcon className="size-8 mb-2 mx-auto opacity-50" />
+            <img
+              src="./instagram.svg"
+              alt="Siga o nosso Instagram"
+              className="size-20 mb-4 mx-auto"
+            />
             <div className="text-xs">
-              Siga o nosso Instagrame veja <br /> tudo que acontece aqui
+              Siga o nosso Instagram e veja tudo que acontece aqui
             </div>
           </a>
           <a
             href="https://wa.me/5588992630993"
             target="_blank"
             rel="noreferrer"
-            className="text-center bg-white p-4 rounded-lg"
+            className="text-center"
           >
-            <PhoneIcon className="size-8 mb-2 mx-auto opacity-50" />
-            <div className="text-xs">
-              Agende sua consulta <br /> pelo whatsapp
-            </div>
+            <img
+              src="./whatsapp.svg"
+              alt="Agende sua consulta pelo whatsapp"
+              className="size-20 mb-4 mx-auto"
+            />
+            <div className="text-xs">Agende sua consulta pelo whatsapp</div>
           </a>
         </div>
       </div>
