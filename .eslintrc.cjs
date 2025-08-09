@@ -1,83 +1,64 @@
-/**
- * This is intended to be a basic starting point for linting in your app.
- * It relies on recommended configs out of the box for simplicity, but you can
- * and should modify this configuration to best suit your team's needs.
- */
+const OFF = 0;
+const WARN = 1;
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-    root: true,
-    parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        ecmaFeatures: {
-            jsx: true,
-        },
+  root: true,
+  extends: [
+    require.resolve("./packages/remix-eslint-config/internal.js"),
+    "plugin:markdown/recommended",
+  ],
+  plugins: ["markdown"],
+  settings: {
+    "import/internal-regex": "^~/",
+  },
+  overrides: [
+    {
+      files: ["**/*.md/**"],
+      rules: {
+        "import/no-extraneous-dependencies": OFF,
+        "no-dupe-keys": OFF,
+        "no-undef": OFF,
+        "no-unused-expressions": OFF,
+        "no-unused-vars": OFF,
+        "@typescript-eslint/no-redeclare": OFF,
+      },
     },
-    env: {
-        browser: true,
-        commonjs: true,
-        es6: true,
+    {
+      files: ["rollup.config.js"],
+      rules: {
+        "import/no-extraneous-dependencies": OFF,
+      },
     },
+    {
+      files: [
+        "**/*.md/*.js?(x)",
+        "**/*.md/*.ts?(x)",
+        "integration/helpers/cf-template/**/*.*",
+        "integration/helpers/deno-template/**/*.*",
+        "integration/helpers/node-template/**/*.*",
+        "packages/remix-dev/config/defaults/**/*.*",
+        "templates/**/*.*",
+      ],
+      rules: {
+        "prefer-let/prefer-let": OFF,
+        "prefer-const": WARN,
 
-    // Base config
-    extends: ["eslint:recommended"],
+        "import/order": [
+          WARN,
+          {
+            alphabetize: { caseInsensitive: true, order: "asc" },
+            groups: ["builtin", "external", "internal", "parent", "sibling"],
+            "newlines-between": "always",
+          },
+        ],
 
-    overrides: [
-        // React
-        {
-            files: ["**/*.{js,jsx,ts,tsx}"],
-            plugins: ["react", "jsx-a11y"],
-            extends: [
-                "plugin:react/recommended",
-                "plugin:react/jsx-runtime",
-                "plugin:react-hooks/recommended",
-                "plugin:jsx-a11y/recommended",
-            ],
-            settings: {
-                react: {
-                    version: "detect",
-                },
-                formComponents: ["Form"],
-                linkComponents: [
-                    { name: "Link", linkAttribute: "to" },
-                    { name: "NavLink", linkAttribute: "to" },
-                ],
-                "import/resolver": {
-                    typescript: {},
-                },
-            },
-        },
-
-        // Typescript
-        {
-            files: ["**/*.{ts,tsx}"],
-            plugins: ["@typescript-eslint", "import"],
-            parser: "@typescript-eslint/parser",
-            settings: {
-                "import/internal-regex": "^~/",
-                "import/resolver": {
-                    node: {
-                        extensions: [".ts", ".tsx"],
-                    },
-                    typescript: {
-                        alwaysTryTypes: true,
-                    },
-                },
-            },
-            extends: [
-                "plugin:@typescript-eslint/recommended",
-                "plugin:import/recommended",
-                "plugin:import/typescript",
-            ],
-        },
-
-        // Node
-        {
-            files: [".eslintrc.cjs"],
-            env: {
-                node: true,
-            },
-        },
-    ],
+        "react/jsx-no-leaked-render": [WARN, { validStrategies: ["ternary"] }],
+      },
+    },
+  ],
+  // Report unused `eslint-disable` comments.
+  reportUnusedDisableDirectives: true,
+  // Tell ESLint not to ignore dot-files, which are ignored by default.
+  ignorePatterns: ["!.*.js"],
 };
