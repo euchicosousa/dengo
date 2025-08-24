@@ -109,11 +109,6 @@ export default function Index() {
               area: "Fonoaudióloga",
               imagem: "kelly.png",
             },
-            {
-              nome: "Samara Araújo",
-              area: "Fisioterapeuta",
-              imagem: "samara.png",
-            },
           ].map((p, i) => (
             <a
               key={i}
