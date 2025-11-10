@@ -78,11 +78,7 @@ export default function Index() {
               area: "Psicológa infantil",
               imagem: "sheilly.png",
             },
-            {
-              nome: "Dra. Carol Rios",
-              area: "Gastroenterologista pediátrica",
-              imagem: "carol.png",
-            },
+
             {
               nome: "Dra. Alanne Holanda",
               area: "Urologista pediátrica",
