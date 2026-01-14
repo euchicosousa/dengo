@@ -1,6 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import { InstagramIcon, MapIcon, PhoneIcon } from "lucide-react";
+import { colors, especialistas } from "~/components/utils";
 
 export const meta: MetaFunction = () => {
   return [
@@ -12,42 +11,14 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export const loader = () => {
-  const colors = [
-    {
-      dark: "text-carinho-dark",
-      base: "text-carinho",
-      light: "bg-carinho-light",
-    },
-    {
-      dark: "text-abraco-dark",
-      base: "text-abraco",
-      light: "bg-abraco-light",
-    },
-    {
-      dark: "text-alegria-dark",
-      base: "text-alegria",
-      light: "bg-alegria-light",
-    },
-    {
-      dark: "text-serenidade-dark",
-      base: "text-serenidade",
-      light: "bg-serenidade-light",
-    },
-  ][Math.floor(Math.random() * 4)];
-
-  return { colors };
-};
-
 export default function Index() {
-  const { colors } = useLoaderData<typeof loader>();
-
+  const color = colors[Math.floor(Math.random() * 4)];
   return (
     <div
-      className={`min-h-dvh grid place-content-center ${colors.light} ${colors.dark}`}
+      className={`min-h-dvh grid place-content-center ${color.light} ${color.dark}`}
     >
       <div className="w-full max-w-[720px] p-8 text-center">
-        <div className={`relative max-w-40 mx-auto mb-8 ${colors.dark}`}>
+        <div className={`relative max-w-40 mx-auto mb-8 ${color.dark}`}>
           {/* <img
             src="./dengo.png"
             alt="Clínica Dengo"
@@ -62,67 +33,8 @@ export default function Index() {
         </div>
 
         <div className="grid grid-cols-2 gap-2 leading-none">
-          {[
-            {
-              nome: "Edrine Vasconcelos",
-              area: "Nutricionista materno infantil",
-              imagem: "edrine.png",
-            },
-            {
-              nome: "Dra. Brenda Vasconcelos",
-              area: "Pediatra",
-              imagem: "brenda.png",
-            },
-            {
-              nome: "Sheily Barreto",
-              area: "Psicológa infantil",
-              imagem: "sheilly.png",
-            },
-
-            {
-              nome: "Dra. Alanne Holanda",
-              area: "Urologista pediátrica",
-              imagem: "alanne.png",
-            },
-
-            {
-              nome: "Keylla Albuquerque",
-              area: "Consultora em Amamentação",
-              imagem: "keylla.png",
-            },
-            {
-              nome: "Juliana Lavor",
-              area: "Fisioterapeuta do Des. Infantil",
-              imagem: "juliana.png",
-            },
-            {
-              nome: "Luma Torre",
-              area: "Consultora do Sono",
-              imagem: "luma.png",
-            },
-            {
-              nome: "Kelly Alves",
-              area: "Fonoaudióloga",
-              imagem: "kelly.png",
-            },
-          ].map((p, i) => (
-            <a
-              key={i}
-              target="_blank"
-              rel="noreferrer"
-              href={`https://wa.me/5588992630993?text=${encodeURI(
-                `Gostaria de agendar uma CONSULTA com a ${p.nome} (${p.area})`
-              )}`}
-              className={`link flex flex-col items-center mb-4`}
-            >
-              <div className="w-24 mb-4">
-                <img src={`/especialistas/${p.imagem}`} alt={p.nome} />
-              </div>
-              <div className="font-semibold mb-2 ">{p.nome}</div>
-              <div className="text-[10px] uppercase tracking-wider opacity-50 font-semibold">
-                {p.area}
-              </div>
-            </a>
+          {especialistas.map((p, i) => (
+            <EspecialistaCard key={i} especialista={p} />
           ))}
         </div>
 
@@ -215,3 +127,29 @@ export function Logo(props: { className?: string; logo?: 1 | 2 }) {
     </svg>
   );
 }
+
+export const EspecialistaCard = ({
+  especialista,
+}: {
+  especialista: (typeof especialistas)[0];
+}) => {
+  return (
+    <a
+      target="_blank"
+      rel="noreferrer"
+      href={`/${especialista.slug}`}
+      className={`link flex flex-col items-center mb-4`}
+    >
+      <div className="w-24 mb-4">
+        <img
+          src={`/especialistas/${especialista.imagem}`}
+          alt={especialista.nome}
+        />
+      </div>
+      <div className="font-semibold mb-2 ">{especialista.nome}</div>
+      <div className="text-[10px] uppercase tracking-wider opacity-50 font-semibold">
+        {especialista.area}
+      </div>
+    </a>
+  );
+};
