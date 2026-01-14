@@ -17,73 +17,7 @@ export default function Index() {
     <div
       className={`min-h-dvh grid place-content-center ${color.light} ${color.dark}`}
     >
-      <div className="w-full max-w-[720px] p-8 text-center">
-        <div className={`relative max-w-40 mx-auto mb-8 ${color.dark}`}>
-          {/* <img
-            src="./dengo.png"
-            alt="Clínica Dengo"
-            className="mx-auto max-w-40"
-          /> */}
-          <Logo className="" />
-          <Logo className="absolute top-0 left-0 animate-spin-slow" logo={1} />
-        </div>
-
-        <div className="text-2xl font-light tracking-tight mb-8">
-          Com quem você deseja agendar sua consulta?
-        </div>
-
-        <div className="grid grid-cols-2 gap-2 leading-none">
-          {especialistas.map((p, i) => (
-            <EspecialistaCard key={i} especialista={p} />
-          ))}
-        </div>
-
-        <div className="grid grid-cols-3 mt-8 gap-4">
-          <a
-            href="https://maps.app.goo.gl/uq3VQGQhhzJK9qXx5"
-            target="_blank"
-            rel="noreferrer"
-            className="text-center"
-          >
-            <img
-              src="./map.svg"
-              alt="Localização no Google"
-              className="size-12 mb-4 mx-auto"
-            />
-            <div className="text-xs">
-              Veja como é fácil chegar aqui na Dengo
-            </div>
-          </a>
-          <a
-            href="https://www.instagram.com/clinicadengo/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-center"
-          >
-            <img
-              src="./instagram.svg"
-              alt="Siga o nosso Instagram"
-              className="size-12 mb-4 mx-auto"
-            />
-            <div className="text-xs">
-              Siga o nosso Instagram e veja tudo que acontece aqui
-            </div>
-          </a>
-          <a
-            href="https://wa.me/5588992630993"
-            target="_blank"
-            rel="noreferrer"
-            className="text-center"
-          >
-            <img
-              src="./whatsapp.svg"
-              alt="Agende sua consulta pelo whatsapp"
-              className="size-12 mb-4 mx-auto"
-            />
-            <div className="text-xs">Agende sua consulta pelo whatsapp</div>
-          </a>
-        </div>
-      </div>
+      <IndexPage />
     </div>
   );
 }
@@ -151,5 +85,70 @@ export const EspecialistaCard = ({
         {especialista.area}
       </div>
     </a>
+  );
+};
+
+export const IndexPage = () => {
+  return (
+    <div className="w-full max-w-[720px] p-8 text-center">
+      <div className={`relative max-w-40 mx-auto mb-8 `}>
+        <Logo className="" />
+        <Logo className="absolute top-0 left-0 animate-spin-slow" logo={1} />
+      </div>
+
+      <div className="text-2xl font-light tracking-tight mb-8">
+        Com quem você deseja agendar sua consulta?
+      </div>
+
+      <div className="grid grid-cols-2 gap-2 leading-none">
+        {especialistas.map((p, i) => (
+          <EspecialistaCard key={i} especialista={p} />
+        ))}
+      </div>
+
+      <div className="grid grid-cols-3 mt-8 gap-4">
+        <a
+          href="https://maps.app.goo.gl/uq3VQGQhhzJK9qXx5"
+          target="_blank"
+          rel="noreferrer"
+          className="text-center"
+        >
+          <img
+            src="./map.svg"
+            alt="Localização no Google"
+            className="size-12 mb-4 mx-auto"
+          />
+          <div className="text-xs">Veja como é fácil chegar aqui na Dengo</div>
+        </a>
+        <a
+          href="https://www.instagram.com/clinicadengo/"
+          target="_blank"
+          rel="noreferrer"
+          className="text-center"
+        >
+          <img
+            src="./instagram.svg"
+            alt="Siga o nosso Instagram"
+            className="size-12 mb-4 mx-auto"
+          />
+          <div className="text-xs">
+            Siga o nosso Instagram e veja tudo que acontece aqui
+          </div>
+        </a>
+        <a
+          href="https://wa.me/5588992630993"
+          target="_blank"
+          rel="noreferrer"
+          className="text-center"
+        >
+          <img
+            src="./whatsapp.svg"
+            alt="Agende sua consulta pelo whatsapp"
+            className="size-12 mb-4 mx-auto"
+          />
+          <div className="text-xs">Agende sua consulta pelo whatsapp</div>
+        </a>
+      </div>
+    </div>
   );
 };

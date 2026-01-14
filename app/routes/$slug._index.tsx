@@ -1,7 +1,7 @@
 import { useParams } from "@remix-run/react";
+import { useEffect } from "react";
 import { colors, especialistas } from "~/components/utils";
 import { EspecialistaCard } from "./_index";
-import { useEffect } from "react";
 
 export default function Slug() {
   const { slug } = useParams();
@@ -10,7 +10,22 @@ export default function Slug() {
 
   if (!slug || !especialista) {
     return (
-      <div className="grid place-content-center h-dvh">Slug não encontrado</div>
+      <div
+        className={`grid place-content-center h-dvh ${colors[0].light} ${colors[0].dark}`}
+      >
+        <div className="max-w-96 flex flex-col gap-8 text-center">
+          <div>
+            Não encontramos a especialista{" "}
+            <span className="font-bold">{slug}</span>, mas você pode agendar com
+            uma das nossas especialistas abaixo:
+          </div>
+          <div className="grid grid-cols-2 gap-2 leading-none">
+            {especialistas.map((p, i) => (
+              <EspecialistaCard key={i} especialista={p} />
+            ))}
+          </div>
+        </div>
+      </div>
     );
   }
 
