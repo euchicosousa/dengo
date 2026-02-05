@@ -85,7 +85,7 @@ export const EspecialistaCard = ({
         {especialista.area}
       </div>
       {especialista.novidade && (
-        <div className="text-[10px] bg-yellow-300 p-1 rounded-full absolute -mt-2 uppercase tracking-wider font-semibold">
+        <div className="text-[10px] bg-yellow-300 py-1 px-2 rounded-full absolute -mt-2 uppercase tracking-wider font-semibold">
           NOVIDADE
         </div>
       )}
