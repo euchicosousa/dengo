@@ -36,6 +36,13 @@ export const colors = [
               imagem: "brenda.png",
             },
             {
+              slug: "ivna",
+              nome: "Ivna Arruda",
+              area: "Fonoaudióloga",
+              imagem: "ivna.png",
+              novidade: true
+            },
+            {
               slug: "sheilly",
               nome: "Sheily Barreto",
               area: "Psicológa infantil",
@@ -74,4 +81,5 @@ export const colors = [
               area: "Fonoaudióloga",
               imagem: "kelly.png",
             },
+            
           ]

@@ -72,7 +72,7 @@ export const EspecialistaCard = ({
       target="_blank"
       rel="noreferrer"
       href={`/${especialista.slug}`}
-      className={`link flex flex-col items-center mb-4`}
+      className={`link flex flex-col relative items-center mb-4`}
     >
       <div className="w-24 mb-4">
         <img
@@ -84,6 +84,11 @@ export const EspecialistaCard = ({
       <div className="text-[10px] uppercase tracking-wider opacity-50 font-semibold">
         {especialista.area}
       </div>
+      {especialista.novidade && (
+        <div className="text-[10px] bg-yellow-300 p-1 rounded-full absolute -mt-2 uppercase tracking-wider font-semibold">
+          NOVIDADE
+        </div>
+      )}
     </a>
   );
 };
