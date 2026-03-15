@@ -43,6 +43,13 @@ export const colors = [
               novidade: true
             },
             {
+              slug: "danielle",
+              nome: "Danielle Paiva",
+              area: "Fisioterapeuta da Mulher",
+              imagem: "danielle.png",
+              novidade: true
+            },
+            {
               slug: "sheilly",
               nome: "Sheily Barreto",
               area: "Psicológa infantil",
