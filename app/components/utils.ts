@@ -86,10 +86,10 @@ export const especialistas = [
     area: "Consultora do Sono",
     imagem: "luma.png",
   },
-  {
-    slug: "kelly",
-    nome: "Kelly Alves",
-    area: "Fonoaudióloga",
-    imagem: "kelly.png",
-  },
+  // {
+  //   slug: "kelly",
+  //   nome: "Kelly Alves",
+  //   area: "Fonoaudióloga",
+  //   imagem: "kelly.png",
+  // },
 ];
