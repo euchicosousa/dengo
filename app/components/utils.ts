@@ -29,6 +29,13 @@ export const especialistas = [
     imagem: "edrine.png",
   },
   {
+    slug: "kelvia",
+    nome: "Kelvia Silva Cavalcante",
+    area: "Psicóloga",
+    imagem: "kelvia.png",
+    novidade: true,
+  },
+  {
     slug: "alana",
     nome: "Alana Melo",
     area: "Pediatra",
