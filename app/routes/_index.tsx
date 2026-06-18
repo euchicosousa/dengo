@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { CSSProperties } from "react";
 import { colors, especialistas } from "~/components/utils";
 
 export const meta: MetaFunction = () => {
@@ -64,15 +65,20 @@ export function Logo(props: { className?: string; logo?: 1 | 2 }) {
 
 export const EspecialistaCard = ({
   especialista,
+  className,
+  style = {},
 }: {
   especialista: (typeof especialistas)[0];
+  className?: string;
+  style?: CSSProperties;
 }) => {
   return (
     <a
       target="_blank"
       rel="noreferrer"
       href={`/${especialista.slug}`}
-      className={`link flex flex-col relative items-center mb-4`}
+      className={`link flex flex-col relative items-center mb-4 animate-fade-up ${className}`}
+      style={style}
     >
       <div className="w-24 mb-4">
         <img
@@ -107,7 +113,11 @@ export const IndexPage = () => {
 
       <div className="grid grid-cols-2 gap-2 leading-none">
         {especialistas.map((p, i) => (
-          <EspecialistaCard key={i} especialista={p} />
+          <EspecialistaCard
+            key={i}
+            especialista={p}
+            style={{ animationDelay: `${(i + 1) * 100}ms` }}
+          />
         ))}
       </div>
 

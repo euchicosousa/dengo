@@ -61,11 +61,27 @@ body {
   animation: animate-spin-slow 20s infinite linear;
 }
 
+.animate-fade-up {
+  animation: animate-fade-up 1s ease-in-out both;
+}
+
+
 @keyframes animate-spin-slow {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-fade-up {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
