@@ -29,24 +29,16 @@ export const especialistas = [
     imagem: "edrine.png",
   },
   {
-    slug: "kelvia",
-    nome: "Kelvia Silva Cavalcante",
-    area: "Psicóloga",
-    imagem: "kelvia.png",
-    novidade: true,
-  },
-  {
-    slug: "alana",
-    nome: "Alana Melo",
-    area: "Pediatra",
-    imagem: "alana.png",
-    novidade: true,
-  },
-  {
     slug: "brenda",
     nome: "Dra. Brenda Vasconcelos",
     area: "Pediatra",
     imagem: "brenda.png",
+  },
+  {
+    slug: "sheilly",
+    nome: "Sheily Barreto",
+    area: "Psicológa infantil",
+    imagem: "sheilly.png",
   },
   {
     slug: "ivna",
@@ -61,10 +53,18 @@ export const especialistas = [
     imagem: "danielle.png",
   },
   {
-    slug: "sheilly",
-    nome: "Sheily Barreto",
-    area: "Psicológa infantil",
-    imagem: "sheilly.png",
+    slug: "kelvia",
+    nome: "Kelvia Silva Cavalcante",
+    area: "Psicóloga",
+    imagem: "kelvia.png",
+    novidade: true,
+  },
+  {
+    slug: "alana",
+    nome: "Alana Melo",
+    area: "Pediatra",
+    imagem: "alana.png",
+    novidade: true,
   },
 
   {
