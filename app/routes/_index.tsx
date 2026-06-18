@@ -102,12 +102,15 @@ export const EspecialistaCard = ({
 export const IndexPage = () => {
   return (
     <div className="w-full max-w-[720px] p-8 text-center">
-      <div className={`relative max-w-40 mx-auto mb-8 `}>
+      <div className={`relative max-w-40 mx-auto mb-8 animate-scale-up`}>
         <Logo className="" />
         <Logo className="absolute top-0 left-0 animate-spin-slow" logo={1} />
       </div>
 
-      <div className="text-2xl font-light tracking-tight mb-8">
+      <div
+        className="text-2xl font-light tracking-tight mb-8 animate-fade-in"
+        style={{ animationDelay: "500ms" }}
+      >
         Com quem você deseja agendar sua consulta?
       </div>
 
