@@ -54,7 +54,7 @@ export default function Slug() {
         <div className="text-2xl">
           {especialista.url ? (
             <div>
-              Estamos direcionando você para{" "}
+              Estamos direcionando você para o link de inscrição do{" "}
               <span className="underline font-bold">
                 {especialista.area}
                 {" — "}
