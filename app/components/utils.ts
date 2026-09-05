@@ -93,6 +93,14 @@ export const especialistas = [
     area: "Consultora do Sono",
     imagem: "luma.png",
   },
+  {
+    slug: "cafe-materno-psi-2026",
+    nome: "Café Psi Materno",
+    area: "Evento",
+    imagem: "sheilly.png",
+    url: "https://forms.gle/JL89Ge4x2hWkZLmZ7",
+    hide: true,
+  },
   // {
   //   slug: "kelly",
   //   nome: "Kelly Alves",

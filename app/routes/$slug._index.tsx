@@ -31,9 +31,11 @@ export default function Slug() {
 
   useEffect(() => {
     setTimeout(() => {
-      window.location.href = `https://wa.me/5588992630993?text=${encodeURI(
-        `Gostaria de agendar uma CONSULTA com a ${especialista.nome} (${especialista.area})`
-      )}`;
+      window.location.href =
+        especialista.url ||
+        `https://wa.me/5588992630993?text=${encodeURI(
+          `Gostaria de agendar uma CONSULTA com a ${especialista.nome} (${especialista.area})`,
+        )}`;
     }, 1000);
   }, []);
 
@@ -50,13 +52,27 @@ export default function Slug() {
           className="w-40 animate-bounce"
         />
         <div className="text-2xl">
-          Estamos direcionando você para agendar uma consulta com a nossa{" "}
-          <span className="underline font-bold">
-            {especialista.area}
-            {" — "}
-            {especialista.nome}
-          </span>
-          .
+          {especialista.url ? (
+            <div>
+              Estamos direcionando você para{" "}
+              <span className="underline font-bold">
+                {especialista.area}
+                {" — "}
+                {especialista.nome}
+              </span>
+              .
+            </div>
+          ) : (
+            <div>
+              Estamos direcionando você para agendar uma consulta com a nossa{" "}
+              <span className="underline font-bold">
+                {especialista.area}
+                {" — "}
+                {especialista.nome}
+              </span>
+              .
+            </div>
+          )}
         </div>
       </div>
     </div>

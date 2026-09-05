@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 import { CSSProperties } from "react";
 import { colors, especialistas } from "~/components/utils";
 
@@ -18,7 +19,7 @@ export default function Index() {
     <div
       className={`min-h-dvh grid place-content-center ${color.light} ${color.dark}`}
     >
-      <IndexPage />
+      <IndexPage color={color} />
     </div>
   );
 }
@@ -99,12 +100,33 @@ export const EspecialistaCard = ({
   );
 };
 
-export const IndexPage = () => {
+export const IndexPage = ({ color }: { color: (typeof colors)[0] }) => {
   return (
-    <div className="w-full max-w-[720px] p-8 text-center">
+    <div className="w-full max-w-[720px] p-8 text-center ">
       <div className={`relative max-w-40 mx-auto mb-8 animate-scale-up`}>
         <Logo className="" />
         <Logo className="absolute top-0 left-0 animate-spin-slow" logo={1} />
+      </div>
+
+      <div className="mb-12 p-8 rounded-3xl bg-white animate-scale-up space-y-4">
+        <h2 className="text-5xl">
+          Café <em>psi</em> Materno
+        </h2>
+        <p className="font-normal">
+          O momento de autocuidado para as mamães para melhorar a comunicação
+          familiar, entender melhor o comportamento dos filhos e como agir
+          fortalecer o vínculo familiar construindo um ambiente harmonioso! E a
+          novidade é que a mamãe que participar desse momento tão especial vai
+          ganhar de presente, 1 voucher para 1 criança, para a Oficina das
+          Emoções que acontecerá em outro momento também inesquecível!
+        </p>
+        <p className="font-bold">24 de setembro às 18h — Vagas limitadas</p>
+        <a
+          href={"/cafe-materno-psi-2026"}
+          className={`p-4 rounded-full font-bold hover:opacity-80 block ${color.light} `}
+        >
+          Fazer inscrição
+        </a>
       </div>
 
       <div
@@ -115,13 +137,15 @@ export const IndexPage = () => {
       </div>
 
       <div className="grid grid-cols-2 gap-2 leading-none">
-        {especialistas.map((p, i) => (
-          <EspecialistaCard
-            key={i}
-            especialista={p}
-            style={{ animationDelay: `${(i + 1) * 100}ms` }}
-          />
-        ))}
+        {especialistas
+          .filter((e) => !e.hide)
+          .map((p, i) => (
+            <EspecialistaCard
+              key={i}
+              especialista={p}
+              style={{ animationDelay: `${(i + 1) * 100}ms` }}
+            />
+          ))}
       </div>
 
       <div className="grid grid-cols-3 mt-8 gap-4">
