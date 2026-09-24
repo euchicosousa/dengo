@@ -108,7 +108,7 @@ export const IndexPage = ({ color }: { color: (typeof colors)[0] }) => {
         <Logo className="absolute top-0 left-0 animate-spin-slow" logo={1} />
       </div>
 
-      <div className="mb-12 p-8 rounded-3xl bg-white animate-scale-up space-y-4">
+      {/* <div className="mb-12 p-8 rounded-3xl bg-white animate-scale-up space-y-4">
         <h2 className="text-5xl">
           Café <em>psi</em> Materno
         </h2>
@@ -127,7 +127,7 @@ export const IndexPage = ({ color }: { color: (typeof colors)[0] }) => {
         >
           Fazer inscrição
         </a>
-      </div>
+      </div> */}
 
       <div
         className="text-2xl font-light tracking-tight mb-8 animate-fade-in"
