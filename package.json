@@ -1,5 +1,5 @@
 {
-  "name": "brenda",
+  "name": "dengo",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -11,34 +11,34 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@remix-run/node": "^2.17.0",
-    "@remix-run/react": "^2.17.0",
-    "@remix-run/serve": "^2.17.0",
-    "@tailwindcss/vite": "^4.1.11",
-    "isbot": "^5.1.29",
+    "@remix-run/node": "^2.17.5",
+    "@remix-run/react": "^2.17.5",
+    "@remix-run/serve": "^2.17.5",
+    "@tailwindcss/vite": "^4.3.3",
+    "isbot": "^5.2.2",
     "lucide-react": "^0.539.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.17.0",
+    "@remix-run/dev": "^2.17.5",
     "@resolid/remix-plugins": "^3.0.3",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
-    "@typescript-eslint/eslint-plugin": "^8.39.0",
-    "@vanilla-extract/vite-plugin": "^5.1.1",
-    "eslint": "^9.33.0",
-    "eslint-import-resolver-typescript": "^4.4.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.70.1",
+    "@vanilla-extract/vite-plugin": "^5.2.6",
+    "eslint": "^9.39.5",
+    "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^5.9.2",
-    "vite": "^7.1.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.6",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   }
 }
