@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/edrine", "destination": "https://wa.me/5588992630993?text=Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Edrine%20Vasconcelos%20-%20Nutricionista%20materno%20infantil", "permanent": false },
+    { "source": "/brenda", "destination": "https://wa.me/5588992630993?text=Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Dra.%20Brenda%20Vasconcelos%20-%20Pediatra", "permanent": false },
+    { "source": "/sheilly", "destination": "https://wa.me/5588992630993?text=Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Sheily%20Barreto%20-%20Psicol%C3%B3ga%20infantil", "permanent": false },
+    { "source": "/ivna", "destination": "https://wa.me/5588992630993?text=Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Ivna%20Arruda%20-%20Fonoaudi%C3%B3loga", "permanent": false },
+    { "source": "/kelvia", "destination": "https://wa.me/5588992630993?text=Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Kelvia%20Silva%20Cavalcante%20-%20Psic%C3%B3loga", "permanent": false },
+    { "source": "/alana", "destination": "https://wa.me/5588992630993?text=Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Alana%20Melo%20-%20Pediatra", "permanent": false },
+    { "source": "/alanne", "destination": "https://wa.me/5588992630993?text=Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Dra.%20Alanne%20Holanda%20-%20Urologista%20pedi%C3%A1trica", "permanent": false },
+    { "source": "/keylla", "destination": "https://wa.me/5588992630993?text=Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Keylla%20Albuquerque%20-%20Consultora%20em%20Amamenta%C3%A7%C3%A3o", "permanent": false },
+    { "source": "/juliana", "destination": "https://wa.me/5588992630993?text=Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Juliana%20Lavor%20-%20Fisioterapeuta%20do%20Des.%20Infantil", "permanent": false },
+    { "source": "/luma", "destination": "https://wa.me/5588992630993?text=Gostaria%20de%20agendar%20uma%20CONSULTA%20com%20a%20Luma%20Torre%20-%20Consultora%20do%20Sono", "permanent": false },
+    { "source": "/pesquisa", "destination": "https://g.page/r/CfwEPNOYaE9hEAI/review", "permanent": false },
+    { "source": "/((?!.*\\.).+)", "destination": "/", "permanent": false }
+  ]
+}

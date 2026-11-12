@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content="0;url=/" />
+    <title>Página não encontrada | Clínica Dengo</title>
+    <meta name="theme-color" content="#e7dae7" />
+    <link rel="icon" href="/ico.png" type="image/png" />
+    <!-- Endereço que não existe: manda para a página principal, que lista as especialistas.
+         (A Vercel também redireciona no servidor pelo vercel.json; este arquivo cobre o que sobrar.) -->
+    <script>
+      {
+        const COR = { carinho: "#e7dae7", abraco: "#f3e5e8", alegria: "#ebf3e5", serenidade: "#dfe6f0" };
+        const nomes = Object.keys(COR);
+        const tema = nomes[Math.floor(Math.random() * nomes.length)];
+        document.documentElement.dataset.tema = tema;
+        document.querySelector('meta[name="theme-color"]').content = COR[tema];
+      }
+    </script>
+    <style>
+      @font-face { font-family: "Poppins"; font-weight: 300; font-style: normal; font-display: swap; src: url("/fonts/poppins-Light.woff2") format("woff2"); }
+      @font-face { font-family: "Poppins"; font-weight: 700; font-style: normal; font-display: swap; src: url("/fonts/poppins-Bold.woff2") format("woff2"); }
+      :root { --fundo: #e7dae7; --texto: #644a67; }
+      :root[data-tema="abraco"]     { --fundo: #f3e5e8; --texto: #814853; }
+      :root[data-tema="alegria"]    { --fundo: #ebf3e5; --texto: #5c7050; }
+      :root[data-tema="serenidade"] { --fundo: #dfe6f0; --texto: #466282; }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; }
+      body {
+        min-height: 100dvh;
+        display: grid;
+        place-content: center;
+        justify-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        text-align: center;
+        background: var(--fundo);
+        color: var(--texto);
+        font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+      }
+      p { max-width: 24rem; font-size: 1.5rem; line-height: 2rem; letter-spacing: -0.025em; }
+      a { display: inline-block; padding: 1rem 2rem; border-radius: 9999px; background: var(--texto); color: var(--fundo); font-weight: 700; text-decoration: none; }
+      a:hover { opacity: 0.85; }
+      :focus-visible { outline: 3px solid var(--texto); outline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <p>Não encontramos essa página, mas você pode agendar com uma das nossas especialistas.</p>
+    <a href="/">Ver as especialistas</a>
+  </body>
+</html>
