@@ -8,7 +8,7 @@ Este projeto é um **link app**: a página de links (link na bio) de um cliente 
 
 ## Particularidades da Dengo
 
-- **Sem rastreamento**: não há `tracking.js`, `data-track` nem `modelos/rota-rastreada.html`. Se um dia houver, recrie a partir do `_modelo`.
+- **Sem rastreamento**: não há `tracking.js` nem `data-track`. Se um dia houver, recrie a partir do `_modelo`.
 - **4 paletas da marca** sorteadas na visita (carinho, abraço, alegria, serenidade); as originais estão em `PALETAS.md`.
 - **Rotas**: uma por especialista (`/slug` → WhatsApp), mais `/pesquisa`. Endereço inexistente vai para `/`. Detalhes no `ROTAS.md`.
 - Ao adicionar uma especialista: card no `index.html`, foto 96x96 em `public/especialistas/`, redirect no `vercel.json` (antes do catch-all) e linha no `ROTAS.md`.
@@ -17,26 +17,25 @@ Este projeto é um **link app**: a página de links (link na bio) de um cliente 
 ## Base (fixo)
 
 - **HTML, CSS e JS puros.** Sem framework, sem `package.json`/npm, sem build, sem Tailwind, sem bibliotecas (nem de animação, nem de ícones). Animações em CSS.
-- **Scripts externos só de rastreamento** (Google e Meta), carregados pelo `public/tracking.js` e só quando o ID estiver preenchido.
-- **Tudo que é publicado fica em `public/`.** O `vercel.json` define `"framework": null`, `"outputDirectory": "public"` e `"cleanUrls": true`. Arquivos fora de `public/` (este, `README.md`, `ROTAS.md`, `modelos/`) não vão para o site.
+- **Sem scripts externos e sem rastreamento** na Dengo.
+- **Tudo que é publicado fica em `public/`.** O `vercel.json` define `"framework": null`, `"outputDirectory": "public"` e `"cleanUrls": true`. Arquivos fora de `public/` (este, `README.md`, `ROTAS.md`, `PALETAS.md`, `originais/`) não vão para o site.
 - **Mobile primeiro** (a maioria abre pelo Instagram, no celular) e **acessível** (ver Recomendações).
 
 ## Estrutura
 
 ```
-public/index.html        a página: <head>, identidade (:root), itens, rodapé, animação
-public/tracking.js       Google Analytics 4 e Pixel da Meta (IDs no topo)
-public/arquivos/         PDFs e arquivos para abrir ou baixar
-public/imagens/          artes (botão imagem, og:image, fotos)
-vercel.json              redirects das rotas curtas sem rastreamento
-modelos/rota-rastreada.html  modelo de rota com rastreamento (copiar para public/<rota>.html)
-ROTAS.md                 registro de todas as rotas
-README.md                guia para pessoas (passo a passo de cliente novo, deploy)
+public/index.html        a página: <head>, paletas (:root), cards, rodapé, animação
+public/404.html          endereço inexistente (leva para /)
+public/og.jpg            prévia ao compartilhar
+public/fonts/            Poppins local
+public/especialistas/    fotos 96x96
+vercel.json              redirects das rotas (/slug, /pesquisa, catch-all)
+ROTAS.md  PALETAS.md  README.md
 ```
 
 ## Peças disponíveis
 
-Visual e destino são independentes. Qualquer visual aceita qualquer destino, e qualquer item aceita validade e rastreamento.
+Visual e destino são independentes. Qualquer visual aceita qualquer destino, e qualquer item aceita validade.
 
 **Visuais:** botão `.item`, botão claro `.item.item-claro`, destaque `.item.destaque` (selo `.selo` opcional, brilho pulsando), botão imagem `.item-imagem` (a arte inteira é o botão), bloco imagem + legenda `.item-bloco` (arte com título e frase embaixo, no mesmo link), com foto `.item.item-foto`, título de seção `h2.secao`. Ícone `<svg>` e subtítulo `<small>` são opcionais.
 
@@ -52,33 +51,21 @@ Abrir ou baixar um arquivo é escolha por item. O botão imagem pode ir para cam
 **Extras em qualquer elemento:**
 - `data-de="AAAA-MM-DD"` / `data-ate="AAAA-MM-DD"`: o item só aparece no período (o último dia conta; pode usar só um). Um script inline logo após a lista remove o item antes da pintura, pela data do aparelho do visitante.
 - `data-dias="3"`: o item só aparece nos dias da semana listados (0=domingo … 6=sábado; vários: `"3,4"`), pelo dia do aparelho. Combina com `data-de`/`data-ate`.
-- `data-track="nome"`: nome do item no rastreamento.
 
 Se o cliente precisar de algo que não está aqui (carrossel, vídeo, mapa embutido, formulário), crie com HTML/CSS/JS puros, no mesmo estilo dos blocos existentes, com comentário de onde editar.
 
-## Temas (claro e escuro, sorteados na visita)
+## Temas (as 4 paletas da Dengo, sorteadas na visita)
 
-A página inteira usa um tema por vez, escolhido por sorteio quando a pessoa entra: ou tudo claro, ou tudo escuro (nunca seções misturadas). Funciona assim:
-
-- Um script no `<head>` do `index.html` (lista `TEMAS`) sorteia o tema e grava em `<html data-tema="...">` antes da pintura, sem piscar. Também ajusta o `theme-color`.
-- As cores do tema padrão ficam em `:root`; cada outro tema só redefine o que muda em `:root[data-tema="nome"]`. Use sempre variáveis (`var(--fundo)`, `var(--texto)`), nunca cor solta, para o tema valer na página toda.
-- `?tema=escuro` (ou `claro`) força um tema, para testar ou para campanha.
-- Para o cliente que quer um tema só: deixe um nome em `TEMAS` e apague o bloco do outro. Para mais temas: crie o bloco `:root[data-tema="nome"]` e inclua o nome em `TEMAS` e `COR`.
-- Cada tema precisa passar no contraste de 4,5:1. O logo em arquivo `<img src="logo.svg">` não troca de cor: use SVG inline com `fill="currentColor"` ou duas versões (ex.: `logo.svg` e `logo-claro.svg`, trocando pelo `data-tema`).
-
-## Rastreamento
-
-- IDs no topo de `public/tracking.js`: `googleTagId` (GA4, `G-XXXX`) e `metaPixelId`. Vazio = desligado, nada carregado.
-- PageView automático em toda página que inclui o `tracking.js`.
-- Cliques em `[data-track]` viram evento conforme o próprio link: `<a download>` → `file_download`; `href` terminando em `.pdf` → `abrir_pdf`; o resto → `clique_link`. Parâmetros: `destino` (= data-track) e, nos de arquivo, `file_name` e `file_extension`. Ao mudar um link de abrir para baixar, o evento acompanha; não mexa no `tracking.js` para isso.
-- Verificação do Search Console: `<meta name="google-site-verification">` comentada no `<head>` do `index.html` (precisa estar no HTML, não no JS).
-- Rota com rastreamento (link divulgado direto em QR code ou anúncio): copie `modelos/rota-rastreada.html` para `public/<rota>.html`, troque `DESTINO` e tire a rota do `vercel.json`.
+- Um script no `<head>` do `index.html` (lista `TEMAS`) sorteia a paleta e grava em `<html data-tema="...">` antes da pintura, sem piscar. Também ajusta o `theme-color`.
+- O carinho é o padrão em `:root`; abraço, alegria e serenidade só redefinem `--fundo` e `--texto` em `:root[data-tema="..."]`. Use sempre variáveis, nunca cor solta.
+- `?tema=abraco` (ou `carinho`, `alegria`, `serenidade`) força uma paleta.
+- As paletas originais da marca e o contraste de cada uma estão em `PALETAS.md`. Mudou cor? Repita no `404.html`.
+- O logo é SVG inline com `currentColor`, então acompanha a paleta.
 
 ## Rotas
 
 - Rotas curtas são **opcionais**. Recomendadas quando o link também vai para bio, QR code ou impresso, ou muda com frequência (ex.: item do mês, WhatsApp). Para um link que só aparece na página, use o destino direto.
-- Sem rastreamento → `redirects` no `vercel.json` com `"permanent": false` (para poder trocar o destino depois).
-- Com rastreamento → `public/<rota>.html` a partir do modelo.
+- `redirects` no `vercel.json` com `"permanent": false` (para poder trocar o destino depois).
 - Uma rota fica **em um lugar só**: se estiver nos dois, o `vercel.json` ganha.
 - **Sempre que criar, mudar ou apagar uma rota, atualize o `ROTAS.md`.**
 
@@ -110,7 +97,6 @@ A página inteira usa um tema por vez, escolhido por sorteio quando a pessoa ent
 **Links**
 - Todo link para outro site com `target="_blank"` leva `rel="noopener"`.
 - WhatsApp com mensagem pronta: `https://wa.me/55DDDNUMERO?text=...` com o texto codificado (`encodeURIComponent`).
-- Todo item clicável novo ganha um `data-track` único (sem acento, sem espaço).
 
 **Validade**
 - Itens sazonais (item do mês, promoção, evento) com `data-ate`. Ao trocar o item do mês, atualize texto, datas e o destino da rota.
@@ -122,7 +108,7 @@ A página inteira usa um tema por vez, escolhido por sorteio quando a pessoa ent
 
 ## Antes de entregar
 
-1. Sirva localmente (`python3 -m http.server 4321 -d public`) e abra em largura de celular (375px): sem rolagem horizontal, sem erro no console.
+1. Sirva localmente (`npx vercel dev` ou `python3 -m http.server 4321 -d public`) e abra em largura de celular (375px): sem rolagem horizontal, sem erro no console.
 2. Confira que logo, imagens e arquivos novos respondem (sem 404).
 3. Se mexeu em rota: `vercel.json` válido (`python3 -m json.tool vercel.json`) e `ROTAS.md` atualizado. Redirects só funcionam na Vercel (ou com `npx vercel dev`); diga isso se não testou.
 4. Não faça commit nem push sem o usuário pedir.
